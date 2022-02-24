@@ -101,7 +101,7 @@ def set_calibration(calib):
         proxy = rospy.ServiceProxy('set_camera_info', SetCameraInfo)
         rsp = proxy(calib)
         return rsp
-    except rospy.ServiceException, e:
+    except rospy.ServiceException as e:
         print("Service call failed: " + str(e))
         return None
 
